@@ -1,0 +1,11 @@
+1. colcon build
+2. colcon build --packages-select package_name
+3. source install/setup.bash
+4. ros2 run package_name node_name 
+
+Python package
+1. ros2 pkg create package_name --build-type ament_python --dependencies rclpy #and other dependencies
+2. chmod +x python_node_name.py
+
+C++ package
+1. ros2 pkg create package_name --build-type ament_cmake -- dependencies rclcpp #and other dependencies
