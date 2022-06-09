@@ -1,11 +1,38 @@
 1. colcon build
 2. colcon build --packages-select package_name
 3. source install/setup.bash
-4. ros2 run package_name node_name 
+
 
 Python package
-1. ros2 pkg create package_name --build-type ament_python --dependencies rclpy #and other dependencies
+1. ros2 pkg create package_name --build-type ament_python --dependencies rclpy           #and other dependencies
 2. chmod +x python_node_name.py
 
+
 C++ package
-1. ros2 pkg create package_name --build-type ament_cmake -- dependencies rclcpp #and other dependencies
+1. ros2 pkg create package_name --build-type ament_cmake -- dependencies rclcpp          #and other dependencies
+
+
+Nodes
+1. ros2 node list
+2. ros2 node info /node_name
+3. ros2 run package_name node_name 
+4. ros2 run package_name node_name --ros-ars -r __node:=new_node_name -r topic_name:=new_topic_name -r service_name:=new_service_name 
+
+
+Topics
+1. ros2 topic list
+2. ros2 topic echo /topic_name
+3. ros2 topic info /topic_name
+4. ros2 topic bw /topic_name
+5. ros2 topic pub -r 10 /topic_name data_type "{data: 'example'}"              #10 hz
+
+
+Services
+1. ros2 service list
+2. ros2 service call /service_name data_type "{  }"
+
+
+Other Tools
+1. rqt_graph
+2. ros2 interface show std_msgs/msg/Int16
+3. rqt                                                                     # rqt -> service -> service caller
