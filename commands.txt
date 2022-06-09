@@ -6,6 +6,7 @@
 Python package
 1. ros2 pkg create package_name --build-type ament_python --dependencies rclpy           #and other dependencies
 2. chmod +x python_node_name.py
+3. colcon build --packages-select package_name --symlink-install                         #don't have to rebuild python nodes repeatedly
 
 
 C++ package
@@ -17,6 +18,10 @@ Nodes
 2. ros2 node info /node_name
 3. ros2 run package_name node_name 
 4. ros2 run package_name node_name --ros-ars -r __node:=new_node_name -r topic_name:=new_topic_name -r service_name:=new_service_name 
+
+
+Launch
+1. ros2 launch package_name launch_name
 
 
 Topics
@@ -44,4 +49,8 @@ Other Tools
 2. ros2 interface list
 2. ros2 interface package package_name
 3. ros2 interface show std_msgs/msg/Int16
-4. rqt                                                                     # rqt -> service -> service caller
+4. rqt                                                                     #rqt -> service -> service caller
+5. ros2 bag record /topic_1 /topic_2 -o desired_file_name
+6. ros2 bag info bag_file_name
+7. ros2 bag play bag_file_name
+8. ros2 bag record -a -o desired_file_name                                 #record all topics
