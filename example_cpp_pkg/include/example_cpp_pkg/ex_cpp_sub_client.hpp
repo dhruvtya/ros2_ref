@@ -1,18 +1,18 @@
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
-#include "example_interfaces/srv/add_two_ints.hpp"
+#include "ex_interfaces_pkg/msg/ex_msg_one.hpp"
+#include "ex_interfaces_pkg/srv/ex_srv_one.hpp"
 
 class ExampleNodeClass: public rclcpp::Node
 {
     private:
         std::thread thread_1_;
-        int counter_;
-        rclcpp::Subscription<std_msgs::msg::String>::SharedPtr ex_subscriber_;
-        rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedPtr ex_client_;
+        
+        rclcpp::Subscription<ex_interfaces_pkg::msg::ExMsgOne>::SharedPtr ex_subscriber_;
+        rclcpp::Client<ex_interfaces_pkg::srv::ExSrvOne>::SharedPtr ex_client_;
         
         void setupCommunications();
-        void exampleSubscriberCallBack(const std_msgs::msg::String::SharedPtr );
-        void exampleServiceClientFn(int , int );
+        void exampleSubscriberCallBack(const ex_interfaces_pkg::msg::ExMsgOne::SharedPtr );
+        void exampleServiceClientFn(int , int, std::string );
 
     public:
         ExampleNodeClass();

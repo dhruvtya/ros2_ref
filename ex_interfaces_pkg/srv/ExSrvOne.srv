@@ -1,0 +1,6 @@
+int64 first_var
+int64 second_var
+string third_var
+---
+int64 res_int_var
+bool res_bool_var

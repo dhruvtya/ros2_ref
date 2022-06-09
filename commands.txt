@@ -32,7 +32,16 @@ Services
 2. ros2 service call /service_name data_type "{  }"
 
 
+Params
+1. ros2 param list
+2. ros2 param get /node_name param_name
+2. ros2 param set /node_name param_name any_value
+3. ros2 run package_name node_name --ros-ars -p param_name:=any_value         #setting paramter at runtime
+
+
 Other Tools
 1. rqt_graph
-2. ros2 interface show std_msgs/msg/Int16
-3. rqt                                                                     # rqt -> service -> service caller
+2. ros2 interface list
+2. ros2 interface package package_name
+3. ros2 interface show std_msgs/msg/Int16
+4. rqt                                                                     # rqt -> service -> service caller

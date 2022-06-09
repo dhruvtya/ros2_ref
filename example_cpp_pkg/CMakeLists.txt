@@ -8,8 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(example_interfaces REQUIRED)
+find_package(ex_interfaces_pkg REQUIRED)
 
 # Example C++ Node 1
 add_executable(ex_cpp_1 src/ex_cpp_1.cpp)
@@ -21,10 +20,10 @@ add_executable(ex_cpp_2_node src/ex_cpp_2_node.cpp src/ex_cpp_2.cpp)
 ament_target_dependencies(ex_cpp_2_node rclcpp)
 
 add_executable(ex_cpp_pub_server_node src/ex_cpp_pub_server_node.cpp src/ex_cpp_pub_server.cpp)
-ament_target_dependencies(ex_cpp_pub_server_node rclcpp std_msgs example_interfaces)
+ament_target_dependencies(ex_cpp_pub_server_node rclcpp ex_interfaces_pkg)
 
 add_executable(ex_cpp_sub_client_node src/ex_cpp_sub_client_node.cpp src/ex_cpp_sub_client.cpp)
-ament_target_dependencies(ex_cpp_sub_client_node rclcpp std_msgs example_interfaces)
+ament_target_dependencies(ex_cpp_sub_client_node rclcpp ex_interfaces_pkg)
 
 install(TARGETS
   ex_cpp_1
