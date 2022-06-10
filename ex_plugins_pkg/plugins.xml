@@ -1,0 +1,8 @@
+<library path="example_plugins">
+  <class type="example_plugins::ExPlugin1Class" base_class_type="ex_plugin_base::ExPluginBaseClass">
+    <description>This is the 1st example plugin.</description>
+  </class>
+  <class type="example_plugins::ExPlugin2Class" base_class_type="ex_plugin_base::ExPluginBaseClass">
+    <description>This is the 2nd example plugin.</description>
+  </class>
+</library>
